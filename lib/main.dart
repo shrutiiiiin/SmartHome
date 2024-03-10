@@ -61,23 +61,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+            SizedBox(height: 20),
             //app bar
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              child: Column( 
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Welcome Home',
                   ),
-                  Text('Shruti Naik', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
+                  Text(
+                    'Shruti Naik',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
                 ],
-              
               ),
-            )
+            ),
             //welcome
-
+            SizedBox(height: 20),
             //content
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+              child: Text('Smart Devices'),
+            ),
+            Expanded(child: GridView.builder(
+              gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+              itemBuilder: (context, index) => Container(color: Colors.grey),
+              ),),
           ]),
         ));
   }
