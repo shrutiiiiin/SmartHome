@@ -60,9 +60,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   Image(image: AssetImage('lib\images\icons\Cat Profile.png')),
                 ],
               ),
-            )
+            ),
             //app bar
-
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Column( 
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Welcome Home',
+                  ),
+                  Text('Shruti Naik', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
+                ],
+              
+              ),
+            )
             //welcome
 
             //content
