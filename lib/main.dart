@@ -1,5 +1,5 @@
 import 'dart:js';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smarthome/util/smartBox.dart';
@@ -144,10 +144,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 itemBuilder: (context, index) {
                   return SmartDeviceBox(
-                    smartDeviceName: mySmartDevices[index][0],
+                    deviceName: mySmartDevices[index][0],
                     iconPath: mySmartDevices[index][1],
                     powerOn: mySmartDevices[index][2],
-                    onChanged: (value) => powerSwitchChanged(value, index),
+                    // onChanged: (value) => powerSwitchChanged(value, index),
                   );
                 },
               ),
