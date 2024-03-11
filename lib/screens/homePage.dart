@@ -13,13 +13,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List mySmartDevices = [
     [
-      'Smart Light' , 'lib/images/icons/lightOn.png', false
+      'Smart Light' , 'lib/images/icons/lightOn.png', true
     ],
     [
       'Smart Fan' , 'lib/images/icons/Fan.png' , false
     ],
     [
-      'Smart Ac' , 'lib/images/icons/Air Conditioner.png', false
+      'Smart Ac' , 'lib/images/icons/Air Conditioner.png', true
     ],
     [
       'Smart TV' , 'lib/images/icons/TV.png', false
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(child: GridView.builder(
               itemCount: 4,
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,  childAspectRatio: 1 / 1.3,),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,  childAspectRatio: 1 / 1.1,),
                 itemBuilder: (context, index){
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),

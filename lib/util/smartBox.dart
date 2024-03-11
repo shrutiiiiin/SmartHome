@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -24,11 +26,14 @@ class SmartDeviceBox extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Text(deviceName, style: GoogleFonts.poppins(fontSize: 14, fontWeight : FontWeight.w500),),
+                  child: Text(deviceName, style: GoogleFonts.poppins(fontSize: 18, fontWeight : FontWeight.w600),),
                 ),
               ),
-              CupertinoSwitch(value: false, onChanged: (value){
-              })
+              Transform.rotate(
+                angle: pi/2,
+                child: CupertinoSwitch(value: powerOn, onChanged: (value){
+                }),
+              )
             ],
           ),
 
