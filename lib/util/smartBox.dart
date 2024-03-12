@@ -9,7 +9,8 @@ class SmartDeviceBox extends StatelessWidget {
   final String deviceName;
   final String iconPath;
   final bool powerOn;
- const SmartDeviceBox({super.key, required this.deviceName, required this.iconPath, required this.powerOn});
+  VoidCallback onChanged;
+  SmartDeviceBox({super.key, required this.deviceName, required this.iconPath, required this.powerOn, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,8 @@ class SmartDeviceBox extends StatelessWidget {
               Transform.rotate(
                 angle: pi/2,
                 child: CupertinoSwitch(value: powerOn, onChanged: (value){
+                  onChanged();
+
                 }),
               )
             ],

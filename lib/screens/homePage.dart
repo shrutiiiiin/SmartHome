@@ -52,8 +52,12 @@ class _MyHomePageState extends State<MyHomePage> {
               fontSize: 20, fontWeight: FontWeight.w500,
             ),),
       ),
-            SizedBox(height: 20,),
 
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text('Shruti',style: GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w500), ),
+            ),
+            SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Text('Smart Devices', style: GoogleFonts.poppins(
@@ -70,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemBuilder: (context, index){
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                  child: SmartDeviceBox(deviceName: mySmartDevices[index][0], iconPath: mySmartDevices[index][1], powerOn: mySmartDevices[index][2]),
+                  child: SmartDeviceBox(deviceName: mySmartDevices[index][0], iconPath: mySmartDevices[index][1], powerOn: mySmartDevices[index][2], onChanged: () { powerSwitchChanged()  },),
                 );
 
                 })),
