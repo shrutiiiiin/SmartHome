@@ -26,6 +26,11 @@ class _MyHomePageState extends State<MyHomePage> {
     ],
 
   ];
+  void powerSwitchchanged(bool value , int index){
+    setState(() {
+      mySmartDevices[index][2] = value;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset('lib/images/icons/menu.png', width: 30,height: 30),
+                  Image.asset('lib/images/icons/menu.png', width: 30,height: 30  ),
                   Image.asset('lib/images/icons/Cat Profile.png',width: 50,height: 50),
                 ],),
             ),
@@ -55,26 +60,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Text('Shruti',style: GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w500), ),
+              child: Text('Shruti Naik',style: GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w500), ),
             ),
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Text('Smart Devices', style: GoogleFonts.poppins(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
                   color: Colors.grey[800],
               ),),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 5),
             Expanded(child: GridView.builder(
               itemCount: 4,
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,  childAspectRatio: 1 / 1.1,),
                 itemBuilder: (context, index){
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                  child: SmartDeviceBox(deviceName: mySmartDevices[index][0], iconPath: mySmartDevices[index][1], powerOn: mySmartDevices[index][2], onChanged: () { powerSwitchChanged()  },),
+                  child: SmartDeviceBox(deviceName: mySmartDevices[index][0], iconPath: mySmartDevices[index][1], powerOn: mySmartDevices[index][2],  onChanged: (value) => powerSwitchchanged(value, index),
+                ),
                 );
 
                 })),
